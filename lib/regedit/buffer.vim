@@ -13,6 +13,12 @@ function! s:RegBuf.Open()
     " doge
 endfunction
 
+function! s:RegBuf.OpenCurrentRegister()
+    let i = line('.') - 1 " we need -1 cuz line start at 1 and array start at 0
+    " very math
+    call g:RegeditRegisterBuffer.Open(i)
+endfunction
+
 " be careful how u use this cuz we may get error
 " close the regedit buffer
 function! s:RegBuf.Close()
@@ -50,7 +56,7 @@ endfunction
 
 " print and populate the buffer with registers
 function! s:RegBuf._populateBuf()
-    " Clear the buffer
+    " clear the buffer
     silent %delete _
 
     let i = 0
@@ -67,7 +73,9 @@ endfunction
 
 " set my mappings
 function! s:RegBuf._setMappings()
-    nnoremap l :ls<CR>
-    nnoremap <silent> q :call g:RegeditBuffer.Close()<CR>
+    nnoremap <silent> <buffer> q :call g:RegeditBuffer.Close()<CR>
+
+    " open current file
+    nnoremap <silent> <buffer> <CR> :call g:RegeditBuffer.OpenCurrentRegister()<CR>
 endfunction
 
