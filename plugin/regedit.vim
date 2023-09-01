@@ -39,7 +39,7 @@ function! RegeditCmd(...)
     if a:1 == "open"
         call g:RegeditBuffer.Open()
     elseif regtoopen != -1 
-        call g:RegeditRegisterBuffer.Open(regtoopen)
+        call g:RegeditRegisterBuffer.Edit(regtoopen)
     else 
         " i give you completion and you manage to get here
         " wow

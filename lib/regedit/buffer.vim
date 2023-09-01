@@ -16,7 +16,7 @@ endfunction
 function! s:RegBuf.OpenCurrentRegister()
     let i = line('.') - 1 " we need -1 cuz line start at 1 and array start at 0
     " very math
-    call g:RegeditRegisterBuffer.Open(i)
+    call g:RegeditRegisterBuffer.Edit(i)
 endfunction
 
 " be careful how u use this cuz we may get error
