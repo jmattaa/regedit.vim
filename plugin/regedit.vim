@@ -18,7 +18,8 @@ function! RegeditComplete(ArgLead, CmdLine, CursorPos)
     " CmdLine: string to be completed (string)
     " CursorPos: position of cursor (number)
 
-    let candidates = ['open']
+    let candidates = g:Regedit.Registers 
+    call add(candidates, 'open')
 
     " filter the candidates based on the input
     let filtered_candidates = filter(candidates, 'v:val =~# "^" . escape(a:ArgLead, "\\")')
@@ -28,14 +29,23 @@ function! RegeditComplete(ArgLead, CmdLine, CursorPos)
 endfunction
 
 function! RegeditCmd(...)
+    let regtoopen = -1
+    for i in range(len(g:Regedit.Registers))
+        if i == a:1
+            let regtoopen = i
+            break
+        endif
+    endfor
+
     if a:1 == "open"
         call g:RegeditBuffer.Open()
+    elseif regtoopen != -1 
+        call g:RegeditRegisterBuffer.Open(regtoopen)
     else 
         " i give you completion and you manage to get here
         " wow
-        " hehe not same comments as quickmark
         echohl ErrorMsg
-        echo 'Regedit: Unkown command'
+        echo 'Quickmark: Unkown command'
         echohl None
     endif
 endfunction
