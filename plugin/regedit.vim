@@ -18,7 +18,7 @@ function! RegeditComplete(ArgLead, CmdLine, CursorPos)
     " CmdLine: string to be completed (string)
     " CursorPos: position of cursor (number)
 
-    let candidates = ['open'] 
+    let candidates = ['open', 'help'] 
 
     " filter the candidates based on the input
     let filtered_candidates = filter(candidates, 'v:val =~# "^" . escape(a:ArgLead, "\\")')
@@ -36,8 +36,11 @@ function! RegeditCmd(...)
         endif
     endfor
 
-    if a:1 == "open"
+    if a:1 == 'open'
         call g:RegeditBuffer.Open()
+    elseif a:1 == 'help'
+        " you want help here u go
+        execute 'help regedit'
     elseif regtoopen != -1 
         call g:RegeditRegisterBuffer.Edit(regtoopen, 1)
     else 

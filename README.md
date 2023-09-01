@@ -1,9 +1,9 @@
 <div align="center">
 
 # Regedit
-###### Access your and edit your registers quickly
+##### Access your and edit your registers quickly
 
-![demo](demo)
+![demo](./assets/demo.gif)
 
 </div>
 
@@ -15,7 +15,7 @@ Using [vim-plug](https://github.com/junegunn/vim-plug)
 Plug 'jmattaa/regedit.vim'
 ```
 
-## Neovim
+### Neovim
 
 Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
@@ -50,17 +50,8 @@ For more run the `:help regedit.usage` command
 
 # Default Mappings
 
-### Keystrokes in quickmarks window
-
-The default keys you can use to navigate and handle the quickmaps window 
-
-| Key              | Action                                               |
-|------------------|------------------------------------------------------|
-| q                | Close the buffer list                                |
-| j                | Move the cursor one line down                        |
-| k                | Move the cursor one line up                          |
-| Enter            | Edit the selected register                           |
-| /`<searchterm>`  | To search for a specific `searchterm`                |
+Move through and search in the buffer as if you'd in a normal vim buffer. The only thing is it's not modifiable.
+Only one special key to quit the `regedit` buffer press `q` and you'll return to the previous open buffer
 
 # Help
 For more help you can find the full documentation in the `regedit` docs by running `:help regedit`
