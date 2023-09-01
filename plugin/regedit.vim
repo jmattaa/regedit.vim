@@ -18,8 +18,7 @@ function! RegeditComplete(ArgLead, CmdLine, CursorPos)
     " CmdLine: string to be completed (string)
     " CursorPos: position of cursor (number)
 
-    let candidates = g:Regedit.Registers 
-    call add(candidates, 'open')
+    let candidates = ['open'] 
 
     " filter the candidates based on the input
     let filtered_candidates = filter(candidates, 'v:val =~# "^" . escape(a:ArgLead, "\\")')
