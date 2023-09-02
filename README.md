@@ -51,11 +51,18 @@ For more run the `:help regedit.usage` command
 # Default Mappings
 
 ### Default regedit keys 
-Prefix key = '<leader>r'
+|                    |              |
+|--------------------|--------------|
+| Prefix key         | '<leader>r'  |
+| Opening window     | '-'          |
 
-Opening window = 'r'
+There is one main key in the `regedit` default mappings that is the regedit
+prefix key. By default this is `<leader>r` which means to edit a certain
+register you can use `<prefix><register>` to edit your register.
 
-To edit a certain register you can use `Prefix+<register>`
+There is also another key which is important for regedit and it is the
+`Regedit.KeyOpen` this is the key after the `prefix` which will tell regedit
+to open a buffer by default you can use `<prefix>-` this will open the buffer
 
 To customize see more by typing `:help regedit.mappings`
 

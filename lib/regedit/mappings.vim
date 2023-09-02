@@ -8,3 +8,12 @@ function! s:RegMappings.SetMappings()
         execute 'nnoremap ' . g:Regedit.KeyPrefix . reg . ' :Regedit ' . reg . '<CR>'
     endfor
 endfunction
+
+function! s:RegMappings.UnsetMappings()
+    silent! execute 'unmap ' . g:Regedit.KeyPrefix . g:Regedit.KeyOpen 
+
+    for reg in g:Regedit.Registers
+        silent! execute 'unmap ' . g:Regedit.KeyPrefix . reg 
+    endfor   
+endfunction
+
