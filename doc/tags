@@ -1,0 +1,5 @@
+regedit.authors	regedit.txt	/*regedit.authors*
+regedit.registers	regedit.txt	/*regedit.registers*
+regedit.toc	regedit.txt	/*regedit.toc*
+regedit.txt	regedit.txt	/*regedit.txt*
+regedit.usage	regedit.txt	/*regedit.usage*
