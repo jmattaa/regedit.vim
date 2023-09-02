@@ -1,4 +1,6 @@
 regedit.authors	regedit.txt	/*regedit.authors*
+regedit.mappings	regedit.txt	/*regedit.mappings*
+regedit.mappings.customize	regedit.txt	/*regedit.mappings.customize*
 regedit.registers	regedit.txt	/*regedit.registers*
 regedit.toc	regedit.txt	/*regedit.toc*
 regedit.txt	regedit.txt	/*regedit.txt*

@@ -4,8 +4,11 @@
 Table of Contents					     *regedit.toc*
 
 1. Usage                                                   |regedit.usage|
+  1.1					       |regedit.expandingcommands|
 2. Registers					       |regedit.registers|
-3. Authors                                               |regedit.authors|
+3. Mappings						|regedit.mappings|
+  3.1 Customize mappings		      |regedit.mappings.customize|
+5. Authors                                               |regedit.authors|
 
 
 ==============================================================================
@@ -19,11 +22,25 @@ searching through by typing `:Regedit <register>` for example `:Regedit "` to
 edit the `"` register and `Regedit c` to edit the `c` register. To see all
 <regeister> options check |regedit.registers|
 
+If you want to exit and not do anything press <escape> twice. To see why twice 
+see |regedit.expandingcommands|
+
+==============================================================================
+1. Expanding commands				*regedit.expandingcommands*
+
+If you are currently editing a register you can expand/execute commands which the
+output will become the register value. 
+
+For example:
+    `:Regedit f` then press escape to get the `execute: ` and you can for example write 
+    `expand('%')` and you'll get the current buffer name in the `f` register.
+
+To exit press <escape>
 
 ==============================================================================
 2. Registers					        *regedit.registers*
 
-To run the `Regedit` command with a registe ruse without the `"`
+To run the `Regedit` command with a registe use without the `"`
 
 The avalible registers that you can acess are:
   - `""`
@@ -66,7 +83,58 @@ The avalible registers that you can acess are:
   - `"+`
 
 ==============================================================================
-3. Authors                                               *regedit.authors*
+3. Mappings						*regedit.mappings*
+
+There is one main key in the `regedit` default mappings that is the regedit
+prefix key. By default this is `<leader>r` which means to edit a certain
+register you can use `<prefix><register>` to edit your register.
+
+There is also another key which is important for regedit and it is the
+`Regedit.KeyOpen` this is the key after the `prefix` which will tell regedit
+to open a buffer by default you can use `<prefix>-` this will open the buffer
+
+The keys that you can customize are:
+    `Regedi.KeyPrefix`: The prefix key
+    `Regedit.KeyOpen`: The key used to open the regedit buffer
+    `Regedit.KeyClear`: The key used to clear all of the registers
+
+Default keys:
+    `KeyPrefix`: <leader>`r`
+    `KeyOpen`: `-`
+    `KeyClear`: `!`
+
+To customize these see |regedit.mappings.customize|
+
+==============================================================================
+3.1 Customize Mappings	    		       *regedit.mappings.customize*
+
+To customize the prefix and open keys you can use a snippet that looks like this:
+>vim
+    " unset the default mappings 
+    call RegeditMappings.UnsetMappings()
+
+    " set prefix key 
+    let Regedit.KeyPrefix = '<leader>v'
+    " set the key to open the buffer
+    " if this is a register it will be overriden
+    let Regedit.KeyOpen = '%'
+    let Regedit.KeyClear = '-'
+
+    " set our mappings
+    call RegeditMappings.SetMappings()
+<
+Place this in your `after` folder. In vim you can place it in
+`.vim/after/plugin/regedit.vim`
+In neovim you can place it in `.nvim/after/plugin/regedit.vim`
+Don't worry no need to use lua ;>
+
+The keys that you can customize are:
+    `Regedi.KeyPrefix`: The prefix key
+    `Regedit.KeyOpen`: The key used to open the regedit buffer
+    `Regedit.KeyClear`: The key used to clear all of the registers
+
+==============================================================================
+4. Authors                                               *regedit.authors*
 
 - @jmattaa <https://github.com/jmattaa>
 
