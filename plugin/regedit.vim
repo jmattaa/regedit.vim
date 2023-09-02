@@ -49,6 +49,9 @@ function! RegeditCmd(...)
     endif
 endfunction
 
+" set the mappings
+call g:RegeditMappings.SetMappings()
+
 let &cpo = s:save_cpo " restore the options
 unlet s:save_cpo
 

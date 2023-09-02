@@ -50,7 +50,16 @@ For more run the `:help regedit.usage` command
 
 # Default Mappings
 
-### Keystrokes in quickmarks window
+### Default regedit keys 
+Prefix key = '<leader>r'
+
+Opening window = 'r'
+
+To edit a certain register you can use `Prefix+<register>`
+
+To customize see more by typing `:help regedit.mappings`
+
+### Keystrokes in regedit window
 
 The default keys you can use to navigate and handle the quickmaps window 
 
