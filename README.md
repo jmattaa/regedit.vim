@@ -50,7 +50,6 @@ For more run the `:help regedit.usage` command
 
 # Default Mappings
 
-<<<<<<< HEAD
 ### Default regedit keys 
 Prefix key = '<leader>r'
 
@@ -71,10 +70,9 @@ The default keys you can use to navigate and handle the quickmaps window
 | k                | Move the cursor one line up                          |
 | Enter            | Edit the selected register                           |
 | /`<searchterm>`  | To search for a specific `searchterm`                |
-=======
+
 Move through and search in the buffer as if you'd in a normal vim buffer. The only thing is it's not modifiable.
 Only one special key to quit the `regedit` buffer press `q` and you'll return to the previous open buffer
->>>>>>> refs/remotes/origin/main
 
 # Help
 For more help you can find the full documentation in the `regedit` docs by running `:help regedit`
