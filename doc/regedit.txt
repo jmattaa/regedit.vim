@@ -4,10 +4,11 @@
 Table of Contents					     *regedit.toc*
 
 1. Usage                                                   |regedit.usage|
+  1.1					       |regedit.expandingcommands|
 2. Registers					       |regedit.registers|
 3. Mappings						|regedit.mappings|
   3.1 Customize mappings		      |regedit.mappings.customize|
-4. Authors                                               |regedit.authors|
+5. Authors                                               |regedit.authors|
 
 
 ==============================================================================
@@ -21,11 +22,25 @@ searching through by typing `:Regedit <register>` for example `:Regedit "` to
 edit the `"` register and `Regedit c` to edit the `c` register. To see all
 <regeister> options check |regedit.registers|
 
+If you want to exit and not do anything press <escape> twice. To see why twice 
+see |regedit.expandingcommands|
+
+==============================================================================
+1. Expanding commands				*regedit.expandingcommands*
+
+If you are currently editing a register you can expand/execute commands which the
+output will become the register value. 
+
+For example:
+    `:Regedit f` then press escape to get the `execute: ` and you can for example write 
+    `expand('%')` and you'll get the current buffer name in the `f` register.
+
+To exit press <escape>
 
 ==============================================================================
 2. Registers					        *regedit.registers*
 
-To run the `Regedit` command with a registe ruse without the `"`
+To run the `Regedit` command with a registe use without the `"`
 
 The avalible registers that you can acess are:
   - `""`

@@ -13,6 +13,7 @@
     - [Vim](#vim)
     - [Neovim](#neovim)
 - [Usage](#usage)
+    - [Expanding commands](#expanding-commands)
 - [Default Mappings](#default-mappings)
     - [Default regedit keys](#default-regedit-keys)
     - [Keystrokes in regedit window](#keystrokes-in-regedit-window)
@@ -58,6 +59,16 @@ buffer with all of your editable registers
 To edit a specific register you can skip listing all the registers and searching through
 by typing `:Regedit <register>` for example `:Regedit "` to edit the `"` register and 
 `Regedit c` to edit the c register
+
+If you want to exit and not do anything press `escape` twice. To see why twice see [Expanding commands](#expanding-commands)
+
+## Expanding commands 
+If you are currently editing a register you can expand/execute commands which the
+output will become the register value. 
+
+For example:
+`:Regedit f` then press escape to get the `execute: ` and you can for example write 
+`expand('%')` and you'll get the current buffer name in the `f` register.
 
 For more run the `:help regedit.usage` command
 

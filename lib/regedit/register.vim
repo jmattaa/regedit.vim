@@ -4,7 +4,21 @@ let g:RegeditRegisterBuffer = s:RegisterBuf
 function! s:RegisterBuf.Edit(regidx, ...)
     let reg = g:Regedit.Registers[a:regidx]
 
-    let newval = input('edit reg "' . reg . ': ', '"' . getreg(reg) . '"')
+    let default_val = getreg(reg) 
+    let newval = input('edit reg "' . reg . ': ', default_val)
+    let newval = '"' . newval . '"'
+
+    " user pressed esc
+    " or left empty
+    if newval == '""'
+        let newval = input('execute: ')
+    endif
+
+    " user pressed escape again
+    if newval == ''
+        return
+    endif
+
     execute 'let @' . reg . '=' . newval
     
     " update our window
@@ -19,7 +33,7 @@ endfunction
 
 function! s:RegisterBuf.ClearRegs()
     for reg in g:Regedit.Registers
-        call setreg(reg, "")
+        execute 'let @' . reg '=""'
     endfor
     echo "Cleared all registers"
 endfunction
