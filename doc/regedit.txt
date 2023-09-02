@@ -78,6 +78,17 @@ There is also another key which is important for regedit and it is the
 `Regedit.KeyOpen` this is the key after the `prefix` which will tell regedit
 to open a buffer by default you can use `<prefix>-` this will open the buffer
 
+The keys that you can customize are:
+    `Regedi.KeyPrefix`: The prefix key
+    `Regedit.KeyOpen`: The key used to open the regedit buffer
+    `Regedit.KeyClear`: The key used to clear all of the registers
+
+Default keys:
+    `KeyPrefix`: <leader>`r`
+    `KeyOpen`: `-`
+    `KeyClear`: `!`
+
+To customize these see |regedit.mappings.customize|
 
 ==============================================================================
 3.1 Customize Mappings	    		       *regedit.mappings.customize*
@@ -92,6 +103,7 @@ To customize the prefix and open keys you can use a snippet that looks like this
     " set the key to open the buffer
     " if this is a register it will be overriden
     let Regedit.KeyOpen = '%'
+    let Regedit.KeyClear = '-'
 
     " set our mappings
     call RegeditMappings.SetMappings()
@@ -100,6 +112,11 @@ Place this in your `after` folder. In vim you can place it in
 `.vim/after/plugin/regedit.vim`
 In neovim you can place it in `.nvim/after/plugin/regedit.vim`
 Don't worry no need to use lua ;>
+
+The keys that you can customize are:
+    `Regedi.KeyPrefix`: The prefix key
+    `Regedit.KeyOpen`: The key used to open the regedit buffer
+    `Regedit.KeyClear`: The key used to clear all of the registers
 
 ==============================================================================
 4. Authors                                               *regedit.authors*

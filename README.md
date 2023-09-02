@@ -68,6 +68,7 @@ For more run the `:help regedit.usage` command
 |--------------------|--------------|
 | Prefix key         | '<leader>r'  |
 | Opening window     | '-'          |
+| Clear registers    | '!'          |
 
 There is one main key in the `regedit` default mappings that is the regedit
 prefix key. By default this is `<leader>r` which means to edit a certain

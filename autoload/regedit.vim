@@ -9,6 +9,7 @@ let g:Regedit.Registers = ['"', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'
 
 let g:Regedit.KeyPrefix = '<leader>r'
 let g:Regedit.KeyOpen = '-'
+let g:Regedit.KeyClear = '!'
 
 function! regedit#loadFiles() abort
     runtime lib/regedit/register.vim

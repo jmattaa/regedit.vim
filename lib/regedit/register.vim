@@ -17,3 +17,10 @@ function! s:RegisterBuf.Edit(regidx, ...)
     echo 'Updated register: ' . reg
 endfunction
 
+function! s:RegisterBuf.ClearRegs()
+    for reg in g:Regedit.Registers
+        call setreg(reg, "")
+    endfor
+    echo "Cleared all registers"
+endfunction
+
