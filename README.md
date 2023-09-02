@@ -7,8 +7,21 @@
 
 </div>
 
+# ***Table of Contents***
+
+- [Installation](#installation)
+    - [Vim](#vim)
+    - [Neovim](#neovim)
+- [Usage](#usage)
+- [Default Mappings](#default-mappings)
+    - [Default regedit keys](#default-regedit-keys)
+    - [Keystrokes in regedit window](#keystrokes-in-regedit-window)
+- [Help](#help)
+- [Authors](#authors)
+
 # Installation
 
+### Vim
 Using [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
