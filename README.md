@@ -7,13 +7,14 @@
 
 </div>
 
-# ***Table of Contents***
+# Table of Contents
 
 - [Installation](#installation)
     - [Vim](#vim)
     - [Neovim](#neovim)
 - [Usage](#usage)
     - [Expanding commands](#expanding-commands)
+- [Configure](#configure)
 - [Default Mappings](#default-mappings)
     - [Default regedit keys](#default-regedit-keys)
     - [Keystrokes in regedit window](#keystrokes-in-regedit-window)
@@ -72,6 +73,35 @@ For example:
 
 For more run the `:help regedit.usage` command
 
+# Configure 
+
+To configure the prefix and open keys you can use a snippet that looks like this:
+```vim
+" unset the default mappings 
+" if you wan't to configure one or two keys you can skip this
+call RegeditMappings.UnsetMappings()
+
+" set prefix key 
+let Regedit.KeyPrefix = '<leader>v'
+" set the key to open the buffer
+" if this is a register it will be overriden
+let Regedit.KeyOpen = '%'
+let Regedit.KeyClear = '-'
+
+" set our mappings
+call RegeditMappings.SetMappings()
+```
+
+Place this in your `after` folder. In vim you can place it in
+`.vim/after/plugin/regedit.vim`
+In neovim you can place it in `nvim/after/plugin/regedit.vim`
+
+The keys that you can customize are:
+    `Regedi.KeyPrefix`: The prefix key
+    `Regedit.KeyOpen`: The key used to open the regedit buffer
+    `Regedit.KeyClear`: The key used to clear all of the registers
+
+
 # Default Mappings
 
 ### Default regedit keys 
@@ -89,7 +119,7 @@ There is also another key which is important for regedit and it is the
 `Regedit.KeyOpen` this is the key after the `prefix` which will tell regedit
 to open a buffer by default you can use `<prefix>-` this will open the buffer
 
-To customize see more by typing `:help regedit.mappings`
+To change these see [configure](#configure) or run `:help Regedit.mappings`
 
 ### Keystrokes in regedit window
 
