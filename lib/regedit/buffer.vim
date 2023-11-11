@@ -61,7 +61,7 @@ function! s:RegBuf._populateBuf()
 
     let i = 0
     for reg in g:Regedit.Registers
-        let reg_content = getreg(reg)
+        let reg_content = g:Regedit.Getreg(reg)
         if !empty(reg_content) 
             call append(i, '"' . reg . ": " . reg_content) 
         else

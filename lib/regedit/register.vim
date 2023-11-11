@@ -4,7 +4,7 @@ let g:RegeditRegisterBuffer = s:RegisterBuf
 function! s:RegisterBuf.Edit(regidx, ...)
     let reg = g:Regedit.Registers[a:regidx]
 
-    let default_val = getreg(reg) 
+    let default_val = g:Regedit.Getreg(reg)
     let newval = input('edit reg "' . reg . ': ', default_val)
     let newval = '"' . newval . '"'
 
@@ -30,6 +30,7 @@ function! s:RegisterBuf.Edit(regidx, ...)
     redraw
     echo 'Updated register: ' . reg
 endfunction
+
 
 function! s:RegisterBuf.ClearRegs()
     for reg in g:Regedit.Registers
