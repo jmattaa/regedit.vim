@@ -11,6 +11,17 @@ let g:Regedit.KeyPrefix = '<leader>r'
 let g:Regedit.KeyOpen = '-'
 let g:Regedit.KeyClear = '!'
 
+function g:Regedit.Getreg(reg)
+    let reg_val = keytrans(getreg(a:reg))
+
+    " make space just a space
+    let reg_val = substitute(reg_val, '<Space>', ' ', 'g')
+    " make val user friendly
+    let reg_val = substitute(reg_val, '<\([[:alnum:]-]\+\)>', '\\<\1>', 'g')
+
+    return reg_val
+endfunction
+
 function! regedit#loadFiles() abort
     runtime lib/regedit/register.vim
     runtime lib/regedit/buffer.vim
