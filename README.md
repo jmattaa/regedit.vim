@@ -3,6 +3,10 @@
 # Regedit
 ##### Access your and edit your registers quickly
 
+<a href="https://dotfyle.com/plugins/jmattaa/regedit.vim">
+  <img src="https://dotfyle.com/plugins/jmattaa/regedit.vim/shield" />
+</a>
+
 ![demo](./assets/demo.gif)
 
 </div>
